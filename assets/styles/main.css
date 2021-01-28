@@ -1,2 +1,10 @@
+.console__outer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.console__section {
+  display: flex;
+}
 
 /*# sourceMappingURL=main.css.map */
