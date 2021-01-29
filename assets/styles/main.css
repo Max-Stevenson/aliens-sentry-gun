@@ -5,14 +5,26 @@ h1 {
 .console__outer-container {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
-  border: 2px solid #838208;
+  border: 3px solid #9D9829;
   box-sizing: border-box;
+  min-width: 800px;
+  overflow: hidden;
+  overflow: -moz-hidden-unscrollable;
 }
 
 .console__section {
   display: flex;
+}
+
+.console__unit-title + .console__unit-ID-container {
+  flex-grow: 1;
+}
+
+#consoleTopSection {
+  justify-content: space-between;
+  background: #110D08;
 }
 
 .console__unit-title {
@@ -35,8 +47,11 @@ h1 {
   font-family: sans-serif;
   line-height: 50px;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   text-align: center;
-  border: 2px solid #666;
+  border: 2px solid #838208;
+  text-shadow: 0 0 3px #838208;
 }
 
 .console__unit-ID-container {
@@ -48,13 +63,8 @@ h1 {
   padding-bottom: 2px;
 }
 
-.console__unit-title + .console__unit-ID-container {
-  flex-grow: 1;
-}
-
-#consoleTopSection {
-  justify-content: space-between;
-  background: #110D08;
+.console__unit-ID-container:first-child {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
