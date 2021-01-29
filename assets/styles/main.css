@@ -7,7 +7,8 @@ h1 {
   flex-direction: column;
   width: 75%;
   margin: 0 auto;
-  border: 2px solid #A69A0C;
+  border: 2px solid #838208;
+  box-sizing: border-box;
 }
 
 .console__section {
@@ -16,11 +17,17 @@ h1 {
 
 .console__unit-title {
   flex-grow: 1;
+  text-transform: uppercase;
+  text-align: center;
+  color: #838208;
+  text-shadow: 0 0 3px #838208;
+  font-family: sans-serif;
 }
 
 .console__unit-ID {
   font-family: sans-serif;
   font-size: 55px;
+  color: #838208;
 }
 
 .console__unit-border {
@@ -38,6 +45,7 @@ h1 {
   align-items: flex-end;
   justify-content: flex-end;
   text-transform: uppercase;
+  padding-bottom: 2px;
 }
 
 .console__unit-title + .console__unit-ID-container {
@@ -46,10 +54,7 @@ h1 {
 
 #consoleTopSection {
   justify-content: space-between;
-}
-
-.console__unit-title {
-  text-align: center;
+  background: #110D08;
 }
 
 /*# sourceMappingURL=main.css.map */
