@@ -1,8 +1,35 @@
 .console__outer-container {
   display: flex;
   flex-direction: column;
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid $mustard-yellow;
 }
 
 .console__section {
   display: flex;
+}
+
+.console__unit-title {
+  flex-grow: 1;
+}
+
+.console__unit-ID-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
+
+.console__unit-title + .console__unit-ID-container {
+  flex-grow: 1;
+}
+
+#consoleTopSection {
+  justify-content: space-between;
+}
+
+.console__unit-title {
+  text-align: center;
 }
