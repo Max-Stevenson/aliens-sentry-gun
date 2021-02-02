@@ -18,8 +18,18 @@
   flex-grow: 1;
 }
 
+#consoleTopSection, #consoleMidSection, #consoleBottomSection {
+  color: $mustard-yellow;
+  text-transform: uppercase;
+  background: $murky-black;
+  text-shadow: 0 0 3px $mustard-yellow;
+}
+
 #consoleTopSection {
   justify-content: space-between;
-  background: #110D08;
+  border-bottom: 4px solid $light-mustard-yellow;
+}
+
+#consoleMidSection {
   border-bottom: 4px solid $light-mustard-yellow;
 }
