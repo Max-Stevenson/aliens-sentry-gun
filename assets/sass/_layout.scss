@@ -8,6 +8,7 @@
   min-width: 800px;
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
+  box-shadow: 0px 0px 3px 1px #999326;
 }
 
 .console__section {
@@ -22,7 +23,6 @@
   color: $mustard-yellow;
   text-transform: uppercase;
   background: $murky-black;
-  text-shadow: 0 0 3px $mustard-yellow;
 }
 
 #consoleTopSection {
@@ -32,4 +32,9 @@
 
 #consoleMidSection {
   border-bottom: 4px solid $light-mustard-yellow;
+  justify-content: space-between;
+}
+
+#consoleMidSection .console__settings-container {
+  flex-basis: 25%;
 }

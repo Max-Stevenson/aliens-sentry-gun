@@ -3,12 +3,14 @@
   text-align: center;
   color: $mustard-yellow;
   font-family: sans-serif;
+  text-shadow: 0 0 3px $mustard-yellow;
 }
 
 .console__unit-ID {
   font-family: sans-serif;
   font-size: 74px;
   color: $mustard-yellow;
+  text-shadow: 0 0 3px $mustard-yellow;
 }
 
 .console__unit-border {
@@ -39,3 +41,10 @@
 .console__unit-ID-container:last-child {
   margin-right: 10px;
 }
+
+.settings-container__top-section {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 2px solid $light-mustard-yellow;;
+}
+

@@ -1,3 +1,7 @@
+body {
+  background: gray;
+}
+
 h1, h2 {
   margin: 0;
 }
@@ -12,6 +16,7 @@ h1, h2 {
   min-width: 800px;
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
+  box-shadow: 0px 0px 3px 1px #999326;
 }
 
 .console__section {
@@ -26,7 +31,6 @@ h1, h2 {
   color: #838208;
   text-transform: uppercase;
   background: #110D08;
-  text-shadow: 0 0 3px #838208;
 }
 
 #consoleTopSection {
@@ -36,6 +40,11 @@ h1, h2 {
 
 #consoleMidSection {
   border-bottom: 4px solid #999326;
+  justify-content: space-between;
+}
+
+#consoleMidSection .console__settings-container {
+  flex-basis: 25%;
 }
 
 .console__unit-title {
@@ -43,12 +52,14 @@ h1, h2 {
   text-align: center;
   color: #838208;
   font-family: sans-serif;
+  text-shadow: 0 0 3px #838208;
 }
 
 .console__unit-ID {
   font-family: sans-serif;
   font-size: 74px;
   color: #838208;
+  text-shadow: 0 0 3px #838208;
 }
 
 .console__unit-border {
@@ -78,6 +89,12 @@ h1, h2 {
 
 .console__unit-ID-container:last-child {
   margin-right: 10px;
+}
+
+.settings-container__top-section {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 2px solid #999326;
 }
 
 /*# sourceMappingURL=main.css.map */
