@@ -57,3 +57,11 @@
 #consoleMidSection .console__settings-container:last-child h2 {
   padding-right: 25%;
 }
+
+#consoleMidSection > div:not(:last-child), #consoleBottomSection > div:not(:last-child) {
+  border-right: 3px double $mustard-yellow;
+}
+
+#consoleBottomSection > div {
+  flex-grow: 1;
+}
