@@ -48,3 +48,12 @@
   border-bottom: 2px solid $light-mustard-yellow;;
 }
 
+.settings-container__bottom-section {
+  text-align: center;
+  padding: 5px;
+}
+
+#consoleMidSection .console__settings-container:first-child .settings-container__top-section h2, 
+#consoleMidSection .console__settings-container:last-child h2 {
+  padding-right: 25%;
+}

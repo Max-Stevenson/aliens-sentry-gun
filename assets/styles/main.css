@@ -6,6 +6,10 @@ h1, h2 {
   margin: 0;
 }
 
+h2 {
+  font-size: 1.25em;
+}
+
 .console__outer-container {
   display: flex;
   flex-direction: column;
@@ -95,6 +99,16 @@ h1, h2 {
   text-align: center;
   padding: 5px;
   border-bottom: 2px solid #999326;
+}
+
+.settings-container__bottom-section {
+  text-align: center;
+  padding: 5px;
+}
+
+#consoleMidSection .console__settings-container:first-child .settings-container__top-section h2,
+#consoleMidSection .console__settings-container:last-child h2 {
+  padding-right: 25%;
 }
 
 /*# sourceMappingURL=main.css.map */
