@@ -50,7 +50,7 @@
 
 .settings-container__bottom-section {
   text-align: center;
-  padding: 5px;
+  padding: 5px 0;
 }
 
 #consoleMidSection .console__settings-container:first-child .settings-container__top-section h2, 
@@ -64,4 +64,13 @@
 
 #consoleBottomSection > div {
   flex-grow: 1;
+}
+
+#consoleMidSection, #consoleBottomSection {
+  text-shadow: 0 0 3px $mustard-yellow;
+}
+
+.settings-container__option--active {
+  background: $mustard-yellow;
+  color: $murky-black;
 }
