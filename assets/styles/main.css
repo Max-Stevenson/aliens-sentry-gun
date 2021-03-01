@@ -111,4 +111,12 @@ h2 {
   padding-right: 25%;
 }
 
+#consoleMidSection > div:not(:last-child), #consoleBottomSection > div:not(:last-child) {
+  border-right: 3px double #838208;
+}
+
+#consoleBottomSection > div {
+  flex-grow: 1;
+}
+
 /*# sourceMappingURL=main.css.map */
