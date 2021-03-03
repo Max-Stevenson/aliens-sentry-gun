@@ -4,22 +4,21 @@ const navigateOptions = function () {
   document.onkeydown = checkKey;
 
   function checkKey(e) {
-    console.log(e);
-    e = e || window.event;
 
-    if (e.keyCode === 38) {
-        // up arrow
-    }
-    else if (e.keyCode === 40) {
-        // down arrow
-    }
-    else if (e.keyCode === 37) {
-       // left arrow
-    }
-    else if (e.keyCode === 39) {
-       // right arrow
-       console.log(startElement.nextElementSibling);
-      startElement.nextElementSibling.classList.toggle('settings-container__top-section--active');
+    switch (e.key) {
+      case "ArrowLeft":
+        // Left pressed
+        break;
+      case "ArrowRight":
+        // Right pressed
+        startElement.nextElementSibling.classList.toggle('settings-container__top-section--active');
+        break;
+      case "ArrowUp":
+        // Up pressed
+        break;
+      case "ArrowDown":
+        // Down pressed
+        break;
     }
   }
 }
