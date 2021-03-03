@@ -123,7 +123,7 @@ h2 {
   text-shadow: 0 0 3px #838208;
 }
 
-.settings-container__option--active, .settings-container__title--active {
+.settings-container__option--active, .settings-container__top-section--active {
   background: #838208;
   color: #110D08;
 }
