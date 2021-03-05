@@ -1,4 +1,7 @@
 let currentIndex = 0;
+const maxIndex =
+  document.querySelectorAll(".console__settings-container").length - 1;
+let outerSelectionActive = true;
 
 const navigateOptions = function () {
   document.onkeydown = checkKey;
@@ -7,10 +10,19 @@ const navigateOptions = function () {
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = 0;
+        }
+        renderActiveSetting(currentIndex);
         break;
       case "ArrowRight":
-        // Right pressed
-        currentIndex++;
+        if (outerSelectionActive) {
+          currentIndex++;
+          if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+          }
+        }
         renderActiveSetting(currentIndex);
         break;
       case "ArrowUp":
@@ -19,11 +31,31 @@ const navigateOptions = function () {
       case "ArrowDown":
         // Down pressed
         break;
+      case "Enter":
+        if (outerSelectionActive) {
+          outerSelectionActive = false;
+          selectSettingBlock(currentIndex);
+        } else {
+          selectInnerSetting();
+          outerSelectionActive = true;
+        }
+        break;
     }
   }
 };
 
 navigateOptions();
+
+const selectSettingBlock = function (index) {
+  const outerSettings = document.querySelectorAll(
+    ".console__settings-container"
+  );
+  let currentSettingElement = outerSettings[index];
+  currentSettingElement.firstElementChild.classList.toggle("settings-container__top-section--active");
+  currentSettingElement.lastElementChild.firstElementChild.classList.toggle('settings-container__option--active');
+};
+
+const selectInnerSetting = function () {};
 
 const renderActiveSetting = (index) => {
   const outerSettings = document.querySelectorAll(
