@@ -26,11 +26,15 @@ const handleNavigation = function () {
   renderActiveSetting(currentOuterIndex);
 
   document.onkeydown = checkKey;
+
   function checkKey(e) {
+    let innerOptions;
     let currentInnerIndex = 0;
-    let maxInnerIndex = document.querySelector(
+    let maxInnerIndex;
+    innerOptions = document.querySelector(
       ".settings-container__top-section--active"
     ).nextElementSibling.children;
+
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
@@ -52,11 +56,35 @@ const handleNavigation = function () {
         }
         break;
       case "ArrowUp":
-        // Up pressed
-
+      // Up pressed
+        if (!outerSelectionActive) {
+          currentInnerIndex--;
+          if (currentInnerIndex < 0) {
+            currentInnerIndex = 0;
+          }
+          innerOptions = document.querySelector(
+            ".settings-container__top-section--active"
+          ).nextElementSibling.children;
+          console.log(innerOptions);
+        }
         break;
-      case "ArrowDown":
-        // Down pressed
+      case "ArrowDown": // Down pressed
+      maxInnerIndex = document.querySelector(
+        ".settings-container__option--active"
+      ).parentElement.childElementCount - 1;
+      if (!outerSelectionActive) {
+        currentInnerIndex++
+        if (currentInnerIndex > maxInnerIndex) {
+          currentInnerIndex = maxInnerIndex;
+        }
+        innerOptions = document.querySelector(
+          ".settings-container__top-section--active"
+        ).nextElementSibling.children;
+        previousInner = 
+        previousInner.classList.toggle(".settings-container__option--active");
+        innerOptions[currentInnerIndex].classList.toggle(".settings-container__option--active");
+      }
+
         break;
       case "Enter":
         if (outerSelectionActive) {
