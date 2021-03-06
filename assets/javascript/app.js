@@ -3,6 +3,8 @@ const maxIndex =
   document.querySelectorAll(".console__settings-container").length - 1;
 let outerSelectionActive = true;
 
+// const genericCheckKey()
+
 const navigateOptions = function () {
   document.onkeydown = checkKey;
 
@@ -10,11 +12,13 @@ const navigateOptions = function () {
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
-        currentIndex--;
-        if (currentIndex < 0) {
-          currentIndex = 0;
+        if (outerSelectionActive) {
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = 0;
+          }
+          renderActiveSetting(currentIndex);
         }
-        renderActiveSetting(currentIndex);
         break;
       case "ArrowRight":
         if (outerSelectionActive) {
@@ -22,14 +26,8 @@ const navigateOptions = function () {
           if (currentIndex > maxIndex) {
             currentIndex = maxIndex;
           }
+          renderActiveSetting(currentIndex);
         }
-        renderActiveSetting(currentIndex);
-        break;
-      case "ArrowUp":
-        // Up pressed
-        break;
-      case "ArrowDown":
-        // Down pressed
         break;
       case "Enter":
         if (outerSelectionActive) {
@@ -51,8 +49,48 @@ const selectSettingBlock = function (index) {
     ".console__settings-container"
   );
   let currentSettingElement = outerSettings[index];
-  currentSettingElement.firstElementChild.classList.toggle("settings-container__top-section--active");
-  currentSettingElement.lastElementChild.firstElementChild.classList.toggle('settings-container__option--active');
+  currentSettingElement.firstElementChild.classList.toggle(
+    "settings-container__top-section--active"
+  );
+  currentSettingElement.lastElementChild.firstElementChild.classList.toggle(
+    "settings-container__option--active"
+  );
+
+  const renderInnerSetting = () => {};
+
+  document.onkeydown = function (e) {
+    const innerOptions = currentSettingElement.lastElementChild.children;
+    const maxIndex = innerOptions.length - 1;
+    let currentIndex = 0;
+    let previousActive = currentSettingElement.lastElementChild.querySelector(
+      ".settings-container__option--active"
+    );
+
+    switch (e.key) {
+      case "ArrowUp":
+        // Up pressed
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = 0;
+        }
+        previousActive.classList.toggle("settings-container__option--active");
+        innerOptions[currentIndex].classList.toggle(
+          "settings-container__option--active"
+        );
+        break;
+      case "ArrowDown":
+        // Down pressed
+        currentIndex++;
+        if (currentIndex > maxIndex) {
+          currentIndex = maxIndex;
+        }
+        previousActive.classList.toggle("settings-container__option--active");
+        innerOptions[currentIndex].classList.toggle(
+          "settings-container__option--active"
+        );
+        break;
+    }
+  };
 };
 
 const selectInnerSetting = function () {};
