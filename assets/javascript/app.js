@@ -99,8 +99,17 @@ const handleNavigation = function () {
               .childElementCount - 1;
           selectSettingBlock(currentOuterIndex);
         } else {
+          outerSelectionActive = true;
+          currentSettingElement.classList.toggle(
+            "settings-container__top-section--active"
+          );
         }
         break;
+        case "Escape":
+          currentOuterIndex = 0;
+          currentInnerIndex = 0;
+          outerSelectionActive = true;
+          resetSettings();
     }
   }
 };
@@ -118,6 +127,24 @@ const selectSettingBlock = function (index) {
   currentSettingElement.lastElementChild.firstElementChild.classList.toggle(
     "settings-container__option--active"
   );
+};
+
+const resetSettings = () => {
+  midSettings = document.querySelectorAll("#consoleMidSection .settings-container__option--active");
+  if (midSettings) {
+    for (let i = 0, j = midSettings.length; i < j; i++) {
+      midSettings[i].classList.toggle('settings-container__option--active');
+    }
+  }
+
+  bottomSettings = document.querySelectorAll("#consoleBottomSection  .settings-container__option--active");
+  if (bottomSettings) {
+    for (let i = 0, j = bottomSettings.length; i < j; i++) {
+      bottomSettings[i].classList.toggle('settings-container__option--active');
+    }
+  }
+  document.querySelector('.settings-container__top-section--active').classList.toggle('settings-container__top-section--active');
+  renderActiveSetting(0);
 };
 
 /*
