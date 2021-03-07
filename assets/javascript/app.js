@@ -20,6 +20,7 @@ const handleNavigation = function () {
   let currentOuterIndex = 0;
   const maxOuterIndex =
     document.querySelectorAll(".console__settings-container").length - 1;
+  let currentSettingElement;
 
   let outerSelectionActive = true;
 
@@ -31,9 +32,6 @@ const handleNavigation = function () {
     let innerOptions;
     let currentInnerIndex = 0;
     let maxInnerIndex;
-    innerOptions = document.querySelector(
-      ".settings-container__top-section--active"
-    ).nextElementSibling.children;
 
     switch (e.key) {
       case "ArrowLeft":
@@ -56,39 +54,39 @@ const handleNavigation = function () {
         }
         break;
       case "ArrowUp":
-      // Up pressed
+        // Up pressed
         if (!outerSelectionActive) {
           currentInnerIndex--;
           if (currentInnerIndex < 0) {
             currentInnerIndex = 0;
           }
-          innerOptions = document.querySelector(
-            ".settings-container__top-section--active"
-          ).nextElementSibling.children;
-          console.log(innerOptions);
+          innerOptions = currentSettingElement.parentElement.lastElementChild.children;
+          innerOptions[currentInnerIndex].classList.toggle(
+            "settings-container__option--active"
+          );
         }
         break;
       case "ArrowDown": // Down pressed
-      maxInnerIndex = document.querySelector(
-        ".settings-container__option--active"
-      ).parentElement.childElementCount - 1;
-      if (!outerSelectionActive) {
-        currentInnerIndex++
-        if (currentInnerIndex > maxInnerIndex) {
-          currentInnerIndex = maxInnerIndex;
+        
+        if (!outerSelectionActive) {
+          currentInnerIndex++;
+          if (currentInnerIndex > maxInnerIndex) {
+            currentInnerIndex = maxInnerIndex;
+          }
+          innerOptions = currentSettingElement.parentElement.lastElementChild.children;
+          console.log(innerOptions);
+          innerOptions[1].classList.toggle(
+            "settings-container__option--active"
+          );
         }
-        innerOptions = document.querySelector(
-          ".settings-container__top-section--active"
-        ).nextElementSibling.children;
-        previousInner = 
-        previousInner.classList.toggle(".settings-container__option--active");
-        innerOptions[currentInnerIndex].classList.toggle(".settings-container__option--active");
-      }
 
         break;
       case "Enter":
         if (outerSelectionActive) {
           outerSelectionActive = false;
+          currentSettingElement = document.querySelector(
+            ".settings-container__top-section--active"
+          );
           selectSettingBlock(currentOuterIndex);
         } else {
         }
