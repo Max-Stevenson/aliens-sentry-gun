@@ -91,6 +91,7 @@ const handleNavigation = function () {
           selectSettingBlock(currentOuterIndex);
         } else {
           outerSelectionActive = true;
+          currentInnerIndex = 0;
           currentSettingElement.classList.toggle("settings-container__top-section--active");
         }
         break;
