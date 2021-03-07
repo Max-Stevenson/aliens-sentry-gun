@@ -130,19 +130,13 @@ const selectSettingBlock = function (index) {
 };
 
 const resetSettings = () => {
-  midSettings = document.querySelectorAll("#consoleMidSection .settings-container__option--active");
-  if (midSettings) {
-    for (let i = 0, j = midSettings.length; i < j; i++) {
-      midSettings[i].classList.toggle('settings-container__option--active');
+ selectedSettings = document.querySelectorAll(".settings-container__option--active");
+  if (selectedSettings) {
+    for (let i = 0, j = selectedSettings.length; i < j; i++) {
+     selectedSettings[i].classList.toggle('settings-container__option--active');
     }
   }
 
-  bottomSettings = document.querySelectorAll("#consoleBottomSection  .settings-container__option--active");
-  if (bottomSettings) {
-    for (let i = 0, j = bottomSettings.length; i < j; i++) {
-      bottomSettings[i].classList.toggle('settings-container__option--active');
-    }
-  }
   document.querySelector('.settings-container__top-section--active').classList.toggle('settings-container__top-section--active');
   renderActiveSetting(0);
 };
