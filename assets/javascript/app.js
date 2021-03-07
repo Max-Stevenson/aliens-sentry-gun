@@ -21,9 +21,9 @@ const handleNavigation = function () {
   const maxOuterIndex =
     document.querySelectorAll(".console__settings-container").length - 1;
   let currentSettingElement;
-
   let outerSelectionActive = true;
-
+  let maxInnerIndex;
+  let currentInnerIndex = 0;
   renderActiveSetting(currentOuterIndex);
 
   document.onkeydown = checkKey;
@@ -74,8 +74,7 @@ const handleNavigation = function () {
             currentInnerIndex = maxInnerIndex;
           }
           innerOptions = currentSettingElement.parentElement.lastElementChild.children;
-          console.log(innerOptions);
-          innerOptions[1].classList.toggle(
+          innerOptions[currentInnerIndex].classList.toggle(
             "settings-container__option--active"
           );
         }
@@ -87,8 +86,10 @@ const handleNavigation = function () {
           currentSettingElement = document.querySelector(
             ".settings-container__top-section--active"
           );
+          maxInnerIndex = currentSettingElement.parentElement.lastElementChild.childElementCount - 1;
           selectSettingBlock(currentOuterIndex);
         } else {
+
         }
         break;
     }
@@ -109,8 +110,6 @@ const selectSettingBlock = function (index) {
     "settings-container__option--active"
   );
 };
-
-const selectInnerSetting = function () {};
 
 /*
   make checkKey generic to navigate outer option and inner option
