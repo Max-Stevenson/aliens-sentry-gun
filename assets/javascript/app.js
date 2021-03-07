@@ -23,6 +23,7 @@ const handleNavigation = function () {
   let currentSettingElement;
   let outerSelectionActive = true;
   let maxInnerIndex;
+  let previousOption;
   let currentInnerIndex = 0;
   renderActiveSetting(currentOuterIndex);
 
@@ -30,8 +31,6 @@ const handleNavigation = function () {
 
   function checkKey(e) {
     let innerOptions;
-    let currentInnerIndex = 0;
-    let maxInnerIndex;
 
     switch (e.key) {
       case "ArrowLeft":
@@ -60,20 +59,29 @@ const handleNavigation = function () {
           if (currentInnerIndex < 0) {
             currentInnerIndex = 0;
           }
-          innerOptions = currentSettingElement.parentElement.lastElementChild.children;
+          innerOptions =
+            currentSettingElement.parentElement.lastElementChild.children;
+          previousOption = currentSettingElement.parentElement.lastElementChild.querySelector(
+            ".settings-container__option--active"
+          );
+          previousOption.classList.toggle("settings-container__option--active");
           innerOptions[currentInnerIndex].classList.toggle(
             "settings-container__option--active"
           );
         }
         break;
       case "ArrowDown": // Down pressed
-        
         if (!outerSelectionActive) {
           currentInnerIndex++;
           if (currentInnerIndex > maxInnerIndex) {
             currentInnerIndex = maxInnerIndex;
           }
-          innerOptions = currentSettingElement.parentElement.lastElementChild.children;
+          innerOptions =
+            currentSettingElement.parentElement.lastElementChild.children;
+          previousOption = currentSettingElement.parentElement.lastElementChild.querySelector(
+            ".settings-container__option--active"
+          );
+          previousOption.classList.toggle("settings-container__option--active");
           innerOptions[currentInnerIndex].classList.toggle(
             "settings-container__option--active"
           );
@@ -86,10 +94,11 @@ const handleNavigation = function () {
           currentSettingElement = document.querySelector(
             ".settings-container__top-section--active"
           );
-          maxInnerIndex = currentSettingElement.parentElement.lastElementChild.childElementCount - 1;
+          maxInnerIndex =
+            currentSettingElement.parentElement.lastElementChild
+              .childElementCount - 1;
           selectSettingBlock(currentOuterIndex);
         } else {
-
         }
         break;
     }
