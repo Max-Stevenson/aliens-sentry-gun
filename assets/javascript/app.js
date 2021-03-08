@@ -6,11 +6,13 @@ const handleNavigation = function () {
   let maxInnerIndex;
   let previousOption;
   let currentInnerIndex = 0;
+  let innerOptions;
+  let selectedSettings;
 
   const renderActiveSetting = (index) => {
     const outerSettings = document.querySelectorAll(".console__settings-container");
-    let currentSettingElement = outerSettings[index];
-    let previousSettingElement = document.querySelector(".settings-container__top-section--active");
+    const currentSettingElement = outerSettings[index];
+    const previousSettingElement = document.querySelector(".settings-container__top-section--active");
     if (previousSettingElement) {
       previousSettingElement.classList.toggle("settings-container__top-section--active");
     }
@@ -31,7 +33,7 @@ const handleNavigation = function () {
 
   const selectSettingBlock = function (index) {
     const outerSettings = document.querySelectorAll(".console__settings-container");
-    let currentSettingElement = outerSettings[index];
+    const currentSettingElement = outerSettings[index];
     currentSettingElement.firstElementChild.classList.toggle(
       "settings-container__top-section--active"
     );
@@ -47,8 +49,8 @@ const handleNavigation = function () {
         selectedSettings[i].classList.toggle("settings-container__option--active");
       }
     }
-  
-    let currentActive = document.querySelector(".settings-container__top-section--active");
+
+    const currentActive = document.querySelector(".settings-container__top-section--active");
     if (currentActive) {
       document
         .querySelector(".settings-container__top-section--active")
@@ -58,9 +60,7 @@ const handleNavigation = function () {
   };
 
   document.onkeydown = checkKey;
-  function checkKey(e) {
-    let innerOptions;
-
+  function checkKey (e) {
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
