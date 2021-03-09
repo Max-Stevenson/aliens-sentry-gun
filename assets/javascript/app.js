@@ -1,3 +1,8 @@
+const playSelectionSound = () => {
+  const audio = new Audio("./assets/selection.mp3");
+  audio.play();
+};
+
 const handleNavigation = function () {
   let currentOuterIndex = 0;
   const maxOuterIndex = document.querySelectorAll(".console__settings-container").length - 1;
@@ -66,6 +71,7 @@ const handleNavigation = function () {
         // Left pressed
         if (outerSelectionActive) {
           currentOuterIndex--;
+          playSelectionSound();
           if (currentOuterIndex < 0) {
             currentOuterIndex = 0;
           }
@@ -75,6 +81,7 @@ const handleNavigation = function () {
       case "ArrowRight":
         if (outerSelectionActive) {
           currentOuterIndex++;
+          playSelectionSound();
           if (currentOuterIndex > maxOuterIndex) {
             currentOuterIndex = maxOuterIndex;
           }
