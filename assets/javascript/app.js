@@ -1,4 +1,4 @@
-const playSelectionSound = () => {
+const plaNavigationSound = () => {
   const audio = new Audio("./assets/selection.mp3");
   audio.play();
 };
@@ -71,7 +71,7 @@ const handleNavigation = function () {
         // Left pressed
         if (outerSelectionActive) {
           currentOuterIndex--;
-          playSelectionSound();
+          plaNavigationSound();
           if (currentOuterIndex < 0) {
             currentOuterIndex = 0;
           }
@@ -81,7 +81,7 @@ const handleNavigation = function () {
       case "ArrowRight":
         if (outerSelectionActive) {
           currentOuterIndex++;
-          playSelectionSound();
+          plaNavigationSound();
           if (currentOuterIndex > maxOuterIndex) {
             currentOuterIndex = maxOuterIndex;
           }
