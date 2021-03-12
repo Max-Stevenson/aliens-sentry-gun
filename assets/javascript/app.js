@@ -1,7 +1,9 @@
-const plaNavigationSound = () => {
+const playNavigationSound = () => {
   const audio = new Audio("./assets/selection.mp3");
   audio.play();
 };
+
+const playSelectionSound = () => {};
 
 const handleNavigation = function () {
   let currentOuterIndex = 0;
@@ -42,9 +44,15 @@ const handleNavigation = function () {
     currentSettingElement.firstElementChild.classList.toggle(
       "settings-container__top-section--active"
     );
-    currentSettingElement.lastElementChild.firstElementChild.classList.toggle(
-      "settings-container__option--active"
-    );
+    if (currentSettingElement.lastElementChild.querySelector(".settings-container__option--active")) {
+      const child = currentSettingElement.lastElementChild.querySelector(".settings-container__option--active");
+      const parent = child.parentNode;
+      currentInnerIndex = Array.prototype.indexOf.call(parent.children, child);
+    } else {
+      currentSettingElement.lastElementChild.firstElementChild.classList.toggle(
+        "settings-container__option--active"
+      );
+    }
   };
 
   const resetSettings = () => {
@@ -71,7 +79,7 @@ const handleNavigation = function () {
         // Left pressed
         if (outerSelectionActive) {
           currentOuterIndex--;
-          plaNavigationSound();
+          playNavigationSound();
           if (currentOuterIndex < 0) {
             currentOuterIndex = 0;
           }
@@ -81,7 +89,7 @@ const handleNavigation = function () {
       case "ArrowRight":
         if (outerSelectionActive) {
           currentOuterIndex++;
-          plaNavigationSound();
+          playNavigationSound();
           if (currentOuterIndex > maxOuterIndex) {
             currentOuterIndex = maxOuterIndex;
           }
@@ -121,6 +129,7 @@ const handleNavigation = function () {
           outerSelectionActive = true;
           currentInnerIndex = 0;
           currentSettingElement.classList.toggle("settings-container__top-section--active");
+          playSelectionSound();
         }
         break;
       case "Escape":
