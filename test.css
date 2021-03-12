@@ -1,0 +1,28 @@
+.temperature-reading__measure-bar {
+  width: 25px;
+  height: 250px;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+
+.measure-bar__interval--long {
+  border-bottom: 1px solid black;
+  height: 0px;
+  width: 75%;
+}
+
+.measure-bar__interval--mid {
+  border-bottom: 1px solid black;
+  height: 0px;
+  width: 50%;
+}
+
+.measure-bar__interval--small {
+  border-bottom: 1px solid black;
+  width: 25%;
+  height: 0px;
+}
