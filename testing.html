@@ -4,17 +4,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="./test.css" />
     <script defer src="./test.js"></script>
   </head>
   <body>
-    <div class="temperature-reading__outer-container">
-      <h2 class="temperature-reading__title">temp</h2>
-      <div class="temperature-reading__inner-container">
-        <div class="temperature-reading__status-bar">
-          <div class="status-bar__inner"></div>
+    <div id="temperature-gauge" class="bar-graph__outer-container">
+      <h2 class="bar-graph__title">temp</h2>
+      <div class="bar-graph__inner-container">
+        <div class="bar-graph__status-bar">
+          <div class="status-bar__inner-bar"></div>
         </div>
-        <div class="temperature-reading__measure-bar">
+        <div class="bar-graph__measure-bar">
           <div class="measure-bar__interval--long"></div>
           <div class="measure-bar__interval--small"></div>
           <div class="measure-bar__interval--mid"></div>
@@ -31,13 +31,13 @@
         </div>
       </div>
     </div>
-    <div class="range-reading__outer-container">
-      <h2 class="range-reading__title">temp</h2>
-      <div class="range-reading__inner-container">
-        <div class="range-reading__status-bar">
-          <div class="status-bar__inner"></div>
+    <div id="range-gauge" class="bar-graph__outer-container">
+      <h2 class="bar-graph__title">temp</h2>
+      <div class="bar-graph__inner-container">
+        <div class="bar-graph__status-bar">
+          <div class="status-bar__inner-bar"></div>
         </div>
-        <div class="range-reading__measure-bar">
+        <div class="bar-graph__measure-bar">
           <div class="measure-bar__interval--long"></div>
           <div class="measure-bar__interval--small"></div>
           <div class="measure-bar__interval--mid"></div>
