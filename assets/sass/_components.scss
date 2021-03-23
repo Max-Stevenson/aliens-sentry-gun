@@ -135,3 +135,9 @@
   background: $mustard-yellow;
   margin: 0 auto;
 }
+
+.firing-section__container {
+  display: flex;
+  text-transform: capitalize;
+  color: $mustard-yellow;
+}

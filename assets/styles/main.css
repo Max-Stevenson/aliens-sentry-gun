@@ -31,7 +31,7 @@ h2 {
   flex-grow: 1;
 }
 
-#consoleTopSection, #consoleMidSection, #consoleBottomSection {
+#consoleTopSection, #consoleMidSection, #consoleBottomSection, #firingTopSection, #firingBottomSection {
   color: #838208;
   text-transform: uppercase;
   background: #110D08;
@@ -187,6 +187,12 @@ h2 {
   width: 75%;
   background: #838208;
   margin: 0 auto;
+}
+
+.firing-section__container {
+  display: flex;
+  text-transform: capitalize;
+  color: #838208;
 }
 
 /*# sourceMappingURL=main.css.map */
