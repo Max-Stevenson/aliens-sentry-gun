@@ -1,5 +1,5 @@
 const handleFiring = () => {
-  const statusBar = document.querySelector(".temperature-reading__status-bar .status-bar__inner");
+  const statusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const statusBarParent = statusBar.parentElement;
   document.addEventListener("keydown", function (e) {
     if (e.keyCode === 32) {
@@ -13,7 +13,6 @@ const handleFiring = () => {
   });
   setInterval(() => {
     if (statusBar.offsetHeight !== 0) {
-      console.log("meow");
       const previousHeightPercentage = Math.floor(
         (Number(statusBar.offsetHeight) / Number(statusBarParent.offsetHeight)) * 100
       );

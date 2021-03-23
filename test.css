@@ -1,8 +1,8 @@
-.temperature-reading__inner-container {
+.bar-graph__inner-container {
   display: flex;
 }
 
-.temperature-reading__measure-bar {
+.bar-graph__measure-bar {
   width: 20px;
   height: 250px;
   border-right: 1px solid black;
@@ -31,7 +31,7 @@
   height: 0px;
 }
 
-.temperature-reading__status-bar {
+.bar-graph__status-bar {
   margin-right: -7px;
   width: 20px;
   height: 250px;
@@ -40,7 +40,7 @@
   transform: rotate(180deg);
 }
 
-.status-bar__inner {
+.status-bar__inner-bar {
   height: 10%;
   width: 75%;
   background: yellow;
