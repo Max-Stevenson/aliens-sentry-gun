@@ -10,6 +10,10 @@ h2 {
   font-size: 1.25em;
 }
 
+.hidden {
+  display: none;
+}
+
 .console__outer-container {
   display: flex;
   flex-direction: column;
@@ -31,7 +35,7 @@ h2 {
   flex-grow: 1;
 }
 
-#consoleTopSection, #consoleMidSection, #consoleBottomSection, #firingTopSection, #firingBottomSection {
+#consoleTopSection, #consoleMidSection, #consoleBottomSection {
   color: #838208;
   text-transform: uppercase;
   background: #110D08;
@@ -193,6 +197,31 @@ h2 {
   display: flex;
   text-transform: capitalize;
   color: #838208;
+}
+
+.firing-section__container:first-of-type {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#roundsRemainingLabel {
+  text-align: center;
+}
+
+#firingTopSection {
+  justify-content: space-between;
+  border-bottom: 4px solid #999326;
+}
+
+#firingTopSection, #firingBottomSection {
+  color: #838208;
+  text-transform: uppercase;
+  background: #110D08;
+}
+
+#firingBottomSection {
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=main.css.map */

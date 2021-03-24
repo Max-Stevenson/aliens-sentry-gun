@@ -1,0 +1,25 @@
+.firing-section__container:first-of-type {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#roundsRemainingLabel {
+  text-align: center;
+}
+
+
+#firingTopSection {
+  justify-content: space-between;
+  border-bottom: 4px solid #999326;
+}
+
+#firingTopSection, #firingBottomSection {
+  color: $mustard-yellow;
+  text-transform: uppercase;
+  background: $murky-black;
+}
+
+#firingBottomSection {
+  justify-content: space-evenly;
+}
