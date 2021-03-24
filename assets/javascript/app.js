@@ -1,3 +1,14 @@
+let isSelectionScreen = true;
+let isFiringScreen = false;
+
+if (isSelectionScreen) {
+  // render selection console
+}
+
+if (isFiringScreen) {
+  // render firing console
+}
+
 const playNavigationSound = () => {
   const audio = new Audio("./assets/selection.mp3");
   audio.play();
