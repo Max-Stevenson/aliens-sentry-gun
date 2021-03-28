@@ -153,3 +153,12 @@ const handleNavigation = function () {
 };
 
 handleNavigation();
+
+document.querySelector("#criticalWarning").addEventListener("click", function () {
+  const warningOuter = this;
+  const warningInner = warningOuter.firstElementChild;
+
+  warningOuter.classList.toggle("critical-warning__container--non-inverted");
+  warningInner.classList.toggle("critical-warning__content--non-inverted");
+  warningInner.classList.toggle("critical-warning-inverted");
+});

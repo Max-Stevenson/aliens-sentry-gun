@@ -30,11 +30,11 @@
 }
 
 // non inverted
-#criticalWarning {
+.critical-warning__container--non-inverted {
   border: 5px solid $mustard-yellow;
 }
 
-.critical-warning--non-inverted {
+.critical-warning__content--non-inverted {
   color: $murky-black;
   background: $mustard-yellow;
   padding: 1px;
