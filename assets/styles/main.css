@@ -151,7 +151,7 @@ h2 {
 .bar-graph__measure-bar {
   width: 20px;
   height: 250px;
-  border-right: 1px solid black;
+  border-right: 1px solid #838208;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,19 +160,19 @@ h2 {
 }
 
 .measure-bar__interval--long {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #838208;
   height: 0px;
   width: 75%;
 }
 
 .measure-bar__interval--mid {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #838208;
   height: 0px;
   width: 50%;
 }
 
 .measure-bar__interval--small {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #838208;
   width: 25%;
   height: 0px;
 }
@@ -181,7 +181,7 @@ h2 {
   margin-right: -7px;
   width: 20px;
   height: 250px;
-  border-top: 1px solid black;
+  border-top: 1px solid #838208;
   box-sizing: border-box;
   transform: rotate(180deg);
 }
