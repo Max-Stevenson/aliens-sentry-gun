@@ -244,6 +244,7 @@ h2 {
 .critical-warning-inverted {
   color: #838208;
   background: #110D08;
+  padding: 1px;
   border: 5px solid #838208;
 }
 
