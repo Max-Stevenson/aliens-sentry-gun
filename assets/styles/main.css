@@ -212,16 +212,22 @@ h2 {
 #firingTopSection {
   justify-content: space-between;
   border-bottom: 4px solid #999326;
+  text-transform: uppercase;
 }
 
-#firingTopSection, #firingBottomSection {
+#firingTopSection,
+#firingBottomSection {
   color: #838208;
-  text-transform: uppercase;
   background: #110D08;
 }
 
 #firingBottomSection {
   justify-content: space-evenly;
+}
+
+#criticalWarning > h2,
+#firingBottomSection > div:nth-child(1) > h2 {
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */
