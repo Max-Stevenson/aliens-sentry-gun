@@ -55,6 +55,7 @@
 
 .round-counter__container {
   display: flex;
+  align-items: center;
 }
 
 .round-counter__header {
@@ -65,7 +66,7 @@
 .round-counter__arrow-right {
   width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 30px solid $mustard-yellow;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid $mustard-yellow;
 }

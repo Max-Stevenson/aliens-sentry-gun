@@ -244,6 +244,7 @@ h2 {
 
 .round-counter__container {
   display: flex;
+  align-items: center;
 }
 
 .round-counter__header {
@@ -254,9 +255,9 @@ h2 {
 .round-counter__arrow-right {
   width: 0;
   height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 30px solid #838208;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #838208;
 }
 
 /*# sourceMappingURL=main.css.map */
