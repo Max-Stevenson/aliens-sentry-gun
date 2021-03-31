@@ -47,3 +47,25 @@
   padding: 1px;
   border: 10px solid $mustard-yellow;
 }
+
+#firingBottomSection > div:nth-child(2) {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.round-counter__container {
+  display: flex;
+}
+
+.round-counter__header {
+  padding: 10px 20px;
+  border: solid 1px $mustard-yellow;
+}
+
+.round-counter__arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 30px solid $mustard-yellow;
+}
