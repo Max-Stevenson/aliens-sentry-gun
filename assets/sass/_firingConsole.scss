@@ -28,14 +28,14 @@
 
 // non inverted
 .critical-warning__container--non-inverted {
-  border: 5px solid $mustard-yellow;
+  border: 10px solid $mustard-yellow;
 }
 
 .critical-warning__content--non-inverted {
   color: $murky-black;
   background: $mustard-yellow;
   padding: 1px;
-  margin: 5px;
+  margin: 10px;
 }
 //
 
@@ -45,5 +45,5 @@
   color: $mustard-yellow;
   background: $murky-black;
   padding: 1px;
-  border: 5px solid $mustard-yellow;
+  border: 10px solid $mustard-yellow;
 }

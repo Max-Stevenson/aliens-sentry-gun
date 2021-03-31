@@ -228,21 +228,21 @@ h2 {
 }
 
 .critical-warning__container--non-inverted {
-  border: 5px solid #838208;
+  border: 10px solid #838208;
 }
 
 .critical-warning__content--non-inverted {
   color: #110D08;
   background: #838208;
   padding: 1px;
-  margin: 5px;
+  margin: 10px;
 }
 
 .critical-warning-inverted {
   color: #838208;
   background: #110D08;
   padding: 1px;
-  border: 5px solid #838208;
+  border: 10px solid #838208;
 }
 
 /*# sourceMappingURL=main.css.map */
