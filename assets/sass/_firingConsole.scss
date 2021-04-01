@@ -26,6 +26,14 @@
   text-transform: uppercase;
 }
 
+#criticalWarning {
+  box-sizing: border-box;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // non inverted
 .critical-warning__container--non-inverted {
   border: 10px solid $mustard-yellow;

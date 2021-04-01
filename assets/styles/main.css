@@ -213,6 +213,14 @@ h2 {
   text-transform: uppercase;
 }
 
+#criticalWarning {
+  box-sizing: border-box;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .critical-warning__container--non-inverted {
   border: 10px solid #838208;
 }
