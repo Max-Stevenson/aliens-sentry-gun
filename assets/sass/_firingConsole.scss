@@ -53,6 +53,10 @@
   justify-content: space-evenly;
 }
 
+#firingBottomSection > div:nth-child(3) {
+  justify-content: space-around;
+}
+
 .round-counter__container {
   display: flex;
   align-items: center;
@@ -69,4 +73,11 @@
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 20px solid $mustard-yellow;
+}
+
+.firing-section__container {
+  display: flex;
+  text-transform: capitalize;
+  color: $mustard-yellow;
+  flex: 1;
 }

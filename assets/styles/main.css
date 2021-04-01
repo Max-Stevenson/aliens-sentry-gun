@@ -185,12 +185,6 @@ h2 {
   margin: 0 auto;
 }
 
-.firing-section__container {
-  display: flex;
-  text-transform: capitalize;
-  color: #838208;
-}
-
 .firing-section__container:first-of-type {
   flex-direction: column;
   align-items: center;
@@ -242,6 +236,10 @@ h2 {
   justify-content: space-evenly;
 }
 
+#firingBottomSection > div:nth-child(3) {
+  justify-content: space-between;
+}
+
 .round-counter__container {
   display: flex;
   align-items: center;
@@ -258,6 +256,13 @@ h2 {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 20px solid #838208;
+}
+
+.firing-section__container {
+  display: flex;
+  text-transform: capitalize;
+  color: #838208;
+  flex: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
