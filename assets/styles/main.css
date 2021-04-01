@@ -234,18 +234,19 @@ h2 {
 #firingBottomSection > div:nth-child(2) {
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 #firingBottomSection > div:nth-child(3) {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.round-counter__container {
+.numeric-indicator__container {
   display: flex;
   align-items: center;
 }
 
-.round-counter__header {
+.numeric-indicator__header {
   padding: 10px 20px;
   border: solid 1px #838208;
 }
