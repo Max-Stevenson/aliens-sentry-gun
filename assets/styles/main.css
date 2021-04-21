@@ -25,14 +25,11 @@ h2 {
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
   box-shadow: 0px 0px 3px 1px #999326;
+  font-family: sans-serif;
 }
 
 .console__section {
   display: flex;
-}
-
-.console__unit-title + .console__unit-ID-container {
-  flex-grow: 1;
 }
 
 #consoleTopSection, #consoleMidSection, #consoleBottomSection {
@@ -61,6 +58,8 @@ h2 {
   color: #838208;
   font-family: sans-serif;
   text-shadow: 0 0 3px #838208;
+  font-size: 1.5em;
+  align-self: center;
 }
 
 .console__unit-ID {

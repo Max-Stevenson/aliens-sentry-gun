@@ -9,14 +9,11 @@
   overflow: hidden;
   overflow: -moz-hidden-unscrollable;
   box-shadow: 0px 0px 3px 1px #999326;
+  font-family: sans-serif;
 }
 
 .console__section {
   display: flex;
-}
-
-.console__unit-title + .console__unit-ID-container {
-  flex-grow: 1;
 }
 
 #consoleTopSection, #consoleMidSection, #consoleBottomSection {
