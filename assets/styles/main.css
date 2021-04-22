@@ -26,13 +26,21 @@ h2 {
   overflow: -moz-hidden-unscrollable;
   box-shadow: 0px 0px 3px 1px #999326;
   font-family: sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .console__section {
   display: flex;
 }
 
-#consoleTopSection, #consoleMidSection, #consoleBottomSection {
+#consoleTopSection,
+#consoleMidSection,
+#consoleBottomSection {
   color: #838208;
   text-transform: uppercase;
   background: #110D08;
@@ -70,6 +78,10 @@ h2 {
 #consoleMidSection > div:nth-child(2) > div.settings-container__top-section {
   text-align: left;
   padding-left: 20%;
+}
+
+#firingBottomSection > div:nth-child(2) {
+  font-size: 2em;
 }
 
 .console__unit-ID {
