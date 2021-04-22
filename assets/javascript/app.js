@@ -1,5 +1,5 @@
-let isSelectionScreen = true;
-let isFiringScreen = false;
+const isSelectionScreen = true;
+const isFiringScreen = false;
 
 if (isSelectionScreen) {
   // render selection console

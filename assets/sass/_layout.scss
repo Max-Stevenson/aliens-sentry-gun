@@ -10,13 +10,21 @@
   overflow: -moz-hidden-unscrollable;
   box-shadow: 0px 0px 3px 1px #999326;
   font-family: sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .console__section {
   display: flex;
 }
 
-#consoleTopSection, #consoleMidSection, #consoleBottomSection {
+#consoleTopSection,
+#consoleMidSection,
+#consoleBottomSection {
   color: $mustard-yellow;
   text-transform: uppercase;
   background: $murky-black;
