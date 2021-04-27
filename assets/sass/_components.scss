@@ -8,6 +8,20 @@
   align-self: center;
 }
 
+#consoleMidSection > div:nth-child(2) > div.settings-container__bottom-section {
+  text-align: left;
+  padding-left: 25%;
+}
+
+#consoleMidSection > div:nth-child(2) > div.settings-container__top-section {
+  text-align: left;
+  padding-left: 20%;
+}
+
+#firingBottomSection > div:nth-child(2) {
+  font-size: 2em;
+}
+
 .console__unit-ID {
   font-family: sans-serif;
   font-size: 74px;
