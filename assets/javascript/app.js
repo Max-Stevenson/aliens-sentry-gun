@@ -14,6 +14,18 @@ const playNavigationSound = () => {
   audio.play();
 };
 
+const disableConfirmationButton = () => {
+  document.querySelector("#settingsConfirmButton").disabled = true;
+};
+
+const enableConfirmationButton = () => {
+  document.querySelector("#settingsConfirmButton").disabled = false;
+};
+
+const checkAllSettingsSelected = () => {
+  return document.querySelectorAll(".settings-container__option--active").length === 7;
+};
+
 const playSelectionSound = () => {};
 
 const handleNavigation = function () {
@@ -67,6 +79,7 @@ const handleNavigation = function () {
   };
 
   const resetSettings = () => {
+    disableConfirmationButton();
     selectedSettings = document.querySelectorAll(".settings-container__option--active");
     if (selectedSettings) {
       for (let i = 0, j = selectedSettings.length; i < j; i++) {
@@ -141,6 +154,9 @@ const handleNavigation = function () {
           currentInnerIndex = 0;
           currentSettingElement.classList.toggle("settings-container__top-section--active");
           playSelectionSound();
+          if (checkAllSettingsSelected()) {
+            enableConfirmationButton();
+          }
         }
         break;
       case "Escape":
