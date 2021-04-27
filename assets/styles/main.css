@@ -140,7 +140,8 @@ h2 {
   padding-right: 25%;
 }
 
-#consoleMidSection > div:not(:last-child), #consoleBottomSection > div:not(:last-child) {
+#consoleMidSection > div:not(:last-child),
+#consoleBottomSection > div:not(:last-child) {
   border-right: 3px double #838208;
 }
 
@@ -148,11 +149,13 @@ h2 {
   flex-grow: 1;
 }
 
-#consoleMidSection, #consoleBottomSection {
+#consoleMidSection,
+#consoleBottomSection {
   text-shadow: 0 0 3px #838208;
 }
 
-.settings-container__option--active, .settings-container__top-section--active {
+.settings-container__option--active,
+.settings-container__top-section--active {
   background: #838208;
   color: #110D08;
 }
@@ -204,6 +207,12 @@ h2 {
   width: 75%;
   background: #838208;
   margin: 0 auto;
+}
+
+.settings-confirmation__container {
+  margin: 5% auto;
+  display: flex;
+  justify-content: center;
 }
 
 #settingsConfirmButton {
