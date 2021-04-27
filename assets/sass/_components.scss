@@ -47,7 +47,7 @@
 .settings-container__top-section {
   text-align: center;
   padding: 5px;
-  border-bottom: 2px solid $light-mustard-yellow;;
+  border-bottom: 2px solid $light-mustard-yellow;
 }
 
 .settings-container__bottom-section {
@@ -59,12 +59,13 @@
   padding-bottom: 40px;
 }
 
-#consoleMidSection .console__settings-container:first-child .settings-container__top-section h2, 
+#consoleMidSection .console__settings-container:first-child .settings-container__top-section h2,
 #consoleMidSection .console__settings-container:last-child h2 {
   padding-right: 25%;
 }
 
-#consoleMidSection > div:not(:last-child), #consoleBottomSection > div:not(:last-child) {
+#consoleMidSection > div:not(:last-child),
+#consoleBottomSection > div:not(:last-child) {
   border-right: 3px double $mustard-yellow;
 }
 
@@ -72,11 +73,13 @@
   flex-grow: 1;
 }
 
-#consoleMidSection, #consoleBottomSection {
+#consoleMidSection,
+#consoleBottomSection {
   text-shadow: 0 0 3px $mustard-yellow;
 }
 
-.settings-container__option--active, .settings-container__top-section--active {
+.settings-container__option--active,
+.settings-container__top-section--active {
   background: $mustard-yellow;
   color: $murky-black;
 }
@@ -130,3 +133,18 @@
   margin: 0 auto;
 }
 
+.settings-confirmation__container {
+  margin: 5% auto;
+  display: flex;
+  justify-content: center;
+}
+
+#settingsConfirmButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

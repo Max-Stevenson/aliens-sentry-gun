@@ -10,10 +10,6 @@ h2 {
   font-size: 1.25em;
 }
 
-.hidden {
-  display: none;
-}
-
 .console__outer-container {
   display: flex;
   flex-direction: column;
@@ -26,6 +22,10 @@ h2 {
   overflow: -moz-hidden-unscrollable;
   box-shadow: 0px 0px 3px 1px #999326;
   font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
 }
 
 .console__section {
@@ -182,6 +182,16 @@ h2 {
   width: 75%;
   background: #838208;
   margin: 0 auto;
+}
+
+#settingsConfirmButton {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 .firing-section__container:first-of-type {
