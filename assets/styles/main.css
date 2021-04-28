@@ -72,6 +72,9 @@ h2 {
 
 #consoleMidSection > div:nth-child(2) > div.settings-container__bottom-section {
   text-align: left;
+}
+
+#consoleMidSection > div:nth-child(2) > div.settings-container__bottom-section h2 {
   padding-left: 25%;
 }
 

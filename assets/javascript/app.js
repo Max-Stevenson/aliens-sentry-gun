@@ -9,6 +9,18 @@ if (isFiringScreen) {
   // render firing console
 }
 
+const switchDisplays = () => {
+  const settingsConsole = document.querySelector("#settingsConsole");
+  const firingConsole = document.querySelector("#firingConsole");
+
+  settingsConsole.classList.toggle("hidden");
+  firingConsole.classList.toggle("hidden");
+};
+
+const setupConfirmButtonHandler = () => {
+  document.querySelector("#settingsConfirmButton").addEventListener("click", switchDisplays);
+};
+
 const playNavigationSound = () => {
   const audio = new Audio("./assets/selection.mp3");
   audio.play();
@@ -169,6 +181,7 @@ const handleNavigation = function () {
 };
 
 handleNavigation();
+setupConfirmButtonHandler();
 
 document.querySelector("#criticalWarning").addEventListener("click", function () {
   const warningOuter = this;
