@@ -54,7 +54,9 @@ const handleNavigation = function () {
   const renderActiveSetting = (index) => {
     const outerSettings = document.querySelectorAll(".console__settings-container");
     const currentSettingElement = outerSettings[index];
-    const previousSettingElement = document.querySelector(".settings-container__top-section--active");
+    const previousSettingElement = document.querySelector(
+      ".settings-container__top-section--active"
+    );
     if (previousSettingElement) {
       previousSettingElement.classList.toggle("settings-container__top-section--active");
     }
@@ -79,8 +81,12 @@ const handleNavigation = function () {
     currentSettingElement.firstElementChild.classList.toggle(
       "settings-container__top-section--active"
     );
-    if (currentSettingElement.lastElementChild.querySelector(".settings-container__option--active")) {
-      const child = currentSettingElement.lastElementChild.querySelector(".settings-container__option--active");
+    if (
+      currentSettingElement.lastElementChild.querySelector(".settings-container__option--active")
+    ) {
+      const child = currentSettingElement.lastElementChild.querySelector(
+        ".settings-container__option--active"
+      );
       const parent = child.parentNode;
       currentInnerIndex = Array.prototype.indexOf.call(parent.children, child);
     } else {
@@ -109,27 +115,31 @@ const handleNavigation = function () {
   };
 
   document.onkeydown = checkKey;
-  function checkKey (e) {
+  function checkKey(e) {
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
         if (outerSelectionActive) {
           currentOuterIndex--;
-          playNavigationSound();
           if (currentOuterIndex < 0) {
             currentOuterIndex = 0;
+            renderActiveSetting(currentOuterIndex);
+          } else {
+            playNavigationSound();
+            renderActiveSetting(currentOuterIndex);
           }
-          renderActiveSetting(currentOuterIndex);
         }
         break;
       case "ArrowRight":
         if (outerSelectionActive) {
           currentOuterIndex++;
-          playNavigationSound();
           if (currentOuterIndex > maxOuterIndex) {
             currentOuterIndex = maxOuterIndex;
+            renderActiveSetting(currentOuterIndex);
+          } else {
+            playNavigationSound();
+            renderActiveSetting(currentOuterIndex);
           }
-          renderActiveSetting(currentOuterIndex);
         }
         break;
       case "ArrowUp":
