@@ -115,7 +115,7 @@ const handleNavigation = function () {
   };
 
   document.onkeydown = checkKey;
-  function checkKey(e) {
+  function checkKey (e) {
     switch (e.key) {
       case "ArrowLeft":
         // Left pressed
