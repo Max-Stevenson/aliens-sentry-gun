@@ -1,6 +1,5 @@
 body {
   background: gray;
-  position: relative;
 }
 
 h1, h2 {
@@ -9,6 +8,12 @@ h1, h2 {
 
 h2 {
   font-size: 1.25em;
+}
+
+.console-container__wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .console__outer-container {
