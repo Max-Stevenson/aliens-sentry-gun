@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-size: 1.5em;
 }
 
 #firingTopSection {
@@ -47,7 +48,7 @@
 }
 //
 
-// Inverted 
+// Inverted
 
 .critical-warning-inverted {
   color: $mustard-yellow;
@@ -58,8 +59,9 @@
 
 #firingBottomSection > div:nth-child(2) {
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  font-size: 2.5em;
 }
 
 #firingBottomSection > div:nth-child(3) {
@@ -69,6 +71,7 @@
 .numeric-indicator__container {
   display: flex;
   align-items: center;
+  padding-top: 22px;
 }
 
 .numeric-indicator__header {
@@ -89,4 +92,13 @@
   text-transform: capitalize;
   color: $mustard-yellow;
   flex: 1;
+}
+
+#firingBottomSection {
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+#firingBottomSection  > div:nth-child(1) > div:nth-child(2) {
+  margin: 5px;
 }

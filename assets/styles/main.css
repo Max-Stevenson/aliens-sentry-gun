@@ -7,7 +7,6 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2.5rem;
-  /* Footer height */
 }
 
 h1, h2 {
@@ -75,6 +74,12 @@ h2 {
 
 #consoleMidSection .console__settings-container {
   flex-grow: 1;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 33%;
+  grid-template-rows: 5% 20% 50% 20% 5%;
 }
 
 .console__unit-title {
@@ -254,6 +259,7 @@ button[disabled] {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-size: 1.5em;
 }
 
 #firingTopSection {
@@ -305,8 +311,9 @@ button[disabled] {
 
 #firingBottomSection > div:nth-child(2) {
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  font-size: 2.5em;
 }
 
 #firingBottomSection > div:nth-child(3) {
@@ -316,6 +323,7 @@ button[disabled] {
 .numeric-indicator__container {
   display: flex;
   align-items: center;
+  padding-top: 22px;
 }
 
 .numeric-indicator__header {
@@ -336,6 +344,15 @@ button[disabled] {
   text-transform: capitalize;
   color: #838208;
   flex: 1;
+}
+
+#firingBottomSection {
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+#firingBottomSection > div:nth-child(1) > div:nth-child(2) {
+  margin: 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
