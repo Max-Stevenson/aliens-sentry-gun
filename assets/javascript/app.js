@@ -201,3 +201,9 @@ document.querySelector("#criticalWarning").addEventListener("click", function ()
   warningInner.classList.toggle("critical-warning__content--non-inverted");
   warningInner.classList.toggle("critical-warning-inverted");
 });
+
+const renderCopyright = () => {
+  document.querySelector("#copyright").innerHTML = `Copyright&#169 ${new Date().getFullYear()} Max Stevenson`;
+};
+
+renderCopyright();
