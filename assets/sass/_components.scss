@@ -104,6 +104,12 @@
 
 .bar-graph__inner-container {
   display: flex;
+  flex: 1;
+}
+
+.bar-graph__outer-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .bar-graph__measure-bar {
