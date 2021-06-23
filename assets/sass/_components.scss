@@ -117,8 +117,7 @@
 }
 
 .bar-graph__measure-bar {
-  width: 20px;
-  height: 250px;
+  width: 25px;
   border-right: 1px solid $mustard-yellow;
   display: flex;
   flex-direction: column;
@@ -148,7 +147,6 @@
 .bar-graph__status-bar {
   margin-right: -7px;
   width: 20px;
-  height: 250px;
   border-top: 1px solid $mustard-yellow;
   box-sizing: border-box;
   transform: rotate(180deg);
