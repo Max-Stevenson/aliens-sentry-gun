@@ -91,6 +91,10 @@
   flex-grow: 1;
 }
 
+#consoleBottomSection {
+  flex: 1;
+}
+
 #consoleMidSection,
 #consoleBottomSection {
   text-shadow: 0 0 3px $mustard-yellow;
