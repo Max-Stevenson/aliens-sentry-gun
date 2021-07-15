@@ -266,7 +266,7 @@ button[disabled] {
 .firing-section__container:first-of-type {
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   font-size: 1.5em;
 }
@@ -333,6 +333,15 @@ button[disabled] {
   display: flex;
   align-items: center;
   padding-top: 22px;
+}
+
+.numeric-indicator__container:last-of-type {
+  width: 60%;
+}
+
+.numeric-indicator__container:last-of-type > h2 {
+  width: 100%;
+  text-align: end;
 }
 
 .numeric-indicator__header {

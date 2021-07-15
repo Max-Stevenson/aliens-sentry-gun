@@ -74,6 +74,15 @@
   padding-top: 22px;
 }
 
+.numeric-indicator__container:last-of-type {
+  width: 60%;
+}
+
+.numeric-indicator__container:last-of-type > h2 {
+  width: 100%;
+  text-align: end;
+}
+
 .numeric-indicator__header {
   padding: 10px 20px;
   border: solid 1px $mustard-yellow;

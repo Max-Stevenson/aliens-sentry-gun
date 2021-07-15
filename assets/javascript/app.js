@@ -190,6 +190,9 @@ const handleNavigation = function () {
         currentInnerIndex = 0;
         outerSelectionActive = true;
         resetSettings();
+        break;
+      case "Space":
+        handleFiring();
     }
   }
 };
@@ -207,7 +210,32 @@ document.querySelector("#criticalWarning").addEventListener("click", function ()
 });
 
 const renderCopyright = () => {
-  document.querySelector("#copyright").innerHTML = `Copyright&#169 ${new Date().getFullYear()} Max Stevenson`;
+  document.querySelector(
+    "#copyright"
+  ).innerHTML = `Copyright&#169 ${new Date().getFullYear()} Max Stevenson`;
 };
 
 renderCopyright();
+
+const handleFiring = () => {
+  const statusBar = document.querySelector("");
+  const statusBarParent = statusBar.parentElement;
+
+  const previousHeightPercentage = Math.floor(
+    (Number(statusBar.offsetHeight) / Number(statusBarParent.offsetHeight)) * 100
+  );
+  statusBar.style.height = `${
+    previousHeightPercentage + 3 > 100 ? 100 : previousHeightPercentage + 3
+  }%`;
+
+  setInterval(() => {
+    if (statusBar.offsetHeight !== 0) {
+      const previousHeightPercentage = Math.floor(
+        (Number(statusBar.offsetHeight) / Number(statusBarParent.offsetHeight)) * 100
+      );
+      statusBar.style.height = `${
+        previousHeightPercentage - 3 < 0 ? 0 : previousHeightPercentage - 3
+      }%`;
+    }
+  }, 500);
+};
