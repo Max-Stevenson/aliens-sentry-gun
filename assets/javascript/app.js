@@ -18,7 +18,11 @@ const switchDisplays = () => {
 };
 
 const setupConfirmButtonHandler = () => {
-  document.querySelector("#settingsConfirmButton").addEventListener("click", switchDisplays);
+  const confirmBtn = document.querySelector("#settingsConfirmButton");
+  confirmBtn.addEventListener("click", () => {
+    switchDisplays();
+    confirmBtn.blur();
+  });
 };
 
 const playNavigationSound = () => {
