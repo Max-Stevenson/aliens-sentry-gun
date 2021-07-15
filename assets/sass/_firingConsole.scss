@@ -66,6 +66,7 @@
 
 #firingBottomSection > div:nth-child(3) {
   justify-content: space-around;
+  padding-top: 0;
 }
 
 .numeric-indicator__container {
@@ -101,6 +102,7 @@
   text-transform: capitalize;
   color: $mustard-yellow;
   flex: 1;
+  padding-top: 10px;
 }
 
 #firingBottomSection {
@@ -111,4 +113,8 @@
 
 #firingBottomSection  > div:nth-child(1) > div:nth-child(2) {
   margin: 5px;
+}
+
+.bar-graph__title {
+  margin-bottom: 10px;
 }

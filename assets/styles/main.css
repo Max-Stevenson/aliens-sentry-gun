@@ -327,6 +327,7 @@ button[disabled] {
 
 #firingBottomSection > div:nth-child(3) {
   justify-content: space-around;
+  padding-top: 0;
 }
 
 .numeric-indicator__container {
@@ -362,6 +363,7 @@ button[disabled] {
   text-transform: capitalize;
   color: #838208;
   flex: 1;
+  padding-top: 10px;
 }
 
 #firingBottomSection {
@@ -372,6 +374,10 @@ button[disabled] {
 
 #firingBottomSection > div:nth-child(1) > div:nth-child(2) {
   margin: 5px;
+}
+
+.bar-graph__title {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
