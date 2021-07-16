@@ -191,8 +191,9 @@ const handleNavigation = function () {
         outerSelectionActive = true;
         resetSettings();
         break;
-      case "Space":
+      case " ":
         handleFiring();
+        break;
     }
   }
 };
@@ -218,24 +219,26 @@ const renderCopyright = () => {
 renderCopyright();
 
 const handleFiring = () => {
-  const statusBar = document.querySelector("");
-  const statusBarParent = statusBar.parentElement;
+  const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
+  const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
   const previousHeightPercentage = Math.floor(
-    (Number(statusBar.offsetHeight) / Number(statusBarParent.offsetHeight)) * 100
+    (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
   );
-  statusBar.style.height = `${
+  temperatureStatusBar.style.height = `${
     previousHeightPercentage + 3 > 100 ? 100 : previousHeightPercentage + 3
   }%`;
 
   setInterval(() => {
-    if (statusBar.offsetHeight !== 0) {
+    if (temperatureStatusBar.offsetHeight !== 0) {
       const previousHeightPercentage = Math.floor(
-        (Number(statusBar.offsetHeight) / Number(statusBarParent.offsetHeight)) * 100
+        (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
       );
-      statusBar.style.height = `${
-        previousHeightPercentage - 3 < 0 ? 0 : previousHeightPercentage - 3
+      temperatureStatusBar.style.height = `${
+        previousHeightPercentage - 1 < 0 ? 0 : previousHeightPercentage - 3
       }%`;
     }
-  }, 500);
+  }, 1000);
 };
+
+document.onkeyup()
