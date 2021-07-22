@@ -225,20 +225,32 @@ const handleFiring = () => {
   const previousHeightPercentage = Math.floor(
     (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
   );
+  console.log(`increase: ${previousHeightPercentage}`);
   temperatureStatusBar.style.height = `${
-    previousHeightPercentage + 3 > 100 ? 100 : previousHeightPercentage + 3
+    previousHeightPercentage + 2 > 100 ? 100 : previousHeightPercentage + 2
   }%`;
-
-  setInterval(() => {
-    if (temperatureStatusBar.offsetHeight !== 0) {
-      const previousHeightPercentage = Math.floor(
-        (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
-      );
-      temperatureStatusBar.style.height = `${
-        previousHeightPercentage - 1 < 0 ? 0 : previousHeightPercentage - 3
-      }%`;
-    }
-  }, 1000);
 };
 
-document.onkeyup()
+document.onkeyup = test;
+function test (e) {
+  if (e.key === " ") {
+    console.log("its working");
+    const interval = setInterval(() => {
+      console.log("in interval");
+      const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
+      const temperatureStatusBarParent = temperatureStatusBar.parentElement;
+
+      if (temperatureStatusBar.offsetHeight !== 0) {
+        const previousHeightPercentage = Math.floor(
+          (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
+        );
+        console.log(`decrease: ${previousHeightPercentage}`);
+        temperatureStatusBar.style.height = `${
+          previousHeightPercentage - 2 < 0 ? 0 : previousHeightPercentage - 2
+        }%`;
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
+  }
+};
