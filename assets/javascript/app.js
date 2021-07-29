@@ -231,9 +231,11 @@ const handleFiring = () => {
   }%`;
 };
 
+let running = false;
 document.onkeyup = test;
 function test (e) {
-  if (e.key === " ") {
+  if (e.key === " " && !running) {
+    running = true;
     console.log("its working");
     const interval = setInterval(() => {
       console.log("in interval");
