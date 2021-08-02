@@ -238,7 +238,6 @@ function test (e) {
     running = true;
     console.log("its working");
     const interval = setInterval(() => {
-      console.log("in interval");
       const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
       const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
@@ -246,11 +245,11 @@ function test (e) {
         const previousHeightPercentage = Math.floor(
           (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
         );
-        console.log(`decrease: ${previousHeightPercentage}`);
         temperatureStatusBar.style.height = `${
           previousHeightPercentage - 2 < 0 ? 0 : previousHeightPercentage - 2
         }%`;
       } else {
+        running = false;
         clearInterval(interval);
       }
     }, 1000);
