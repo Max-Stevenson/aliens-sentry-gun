@@ -225,7 +225,6 @@ const handleFiring = () => {
   const previousHeightPercentage = Math.floor(
     (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
   );
-  console.log(`increase: ${previousHeightPercentage}`);
   temperatureStatusBar.style.height = `${
     previousHeightPercentage + 2 > 100 ? 100 : previousHeightPercentage + 2
   }%`;
@@ -236,7 +235,6 @@ document.onkeyup = test;
 function test (e) {
   if (e.key === " " && !running) {
     running = true;
-    console.log("its working");
     const interval = setInterval(() => {
       const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
       const temperatureStatusBarParent = temperatureStatusBar.parentElement;

@@ -23,3 +23,29 @@ const handleFiring = () => {
   }, 500);
 };
 handleFiring();
+
+let timeout, interval;
+
+[].forEach.call(document.querySelectorAll(".add"), function (button) {
+  button.addEventListener("mousedown", function () {
+    const id = button.dataset.target;
+    incrementValue(id);
+
+    timeout = setTimeout(function () {
+      interval = setInterval(function () {
+        incrementValue(id);
+      }, 50);
+    }, 300);
+  });
+});
+
+function incrementValue (id) {
+  const el = document.getElementById(id);
+  let value = parseInt(el.textContent, 10);
+  document.getElementById(id).textContent = --value;
+}
+
+function clearTimers () {
+  clearTimeout(timeout);
+  clearInterval(interval);
+}
