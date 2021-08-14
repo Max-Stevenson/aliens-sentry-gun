@@ -218,7 +218,20 @@ const renderCopyright = () => {
 
 renderCopyright();
 
+function incrementValue (id) {
+  const el = document.getElementById(id);
+  let value = parseInt(el.textContent, 10);
+  document.getElementById(id).textContent = ++value;
+}
+
+let ammoTimeout, ammoInterval;
 const handleFiring = () => {
+  const ammoElement = document.querySelector("#firing-section__ammo-counter");
+  ammoTimeout = setTimeout(function () {
+    ammoInterval = setInterval(function () {
+      incrementValue(ammoElement);
+    }, 50);
+  }, 300);
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 

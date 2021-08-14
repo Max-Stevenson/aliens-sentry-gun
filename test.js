@@ -45,7 +45,7 @@ function incrementValue (id) {
   document.getElementById(id).textContent = --value;
 }
 
-function clearTimers () {
+function clearTimers (timeout, interval) {
   clearTimeout(timeout);
   clearInterval(interval);
 }
