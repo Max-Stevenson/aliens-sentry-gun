@@ -221,15 +221,19 @@ renderCopyright();
 function incrementValue (id) {
   const el = document.getElementById(id);
   let value = parseInt(el.textContent, 10);
-  document.getElementById(id).textContent = ++value;
+  document.getElementById(id).textContent = --value;
+}
+
+function clearTimers (timeout, interval) {
+  clearTimeout(timeout);
+  clearInterval(interval);
 }
 
 let ammoTimeout, ammoInterval;
 const handleFiring = () => {
-  const ammoElement = document.querySelector("#firing-section__ammo-counter");
   ammoTimeout = setTimeout(function () {
     ammoInterval = setInterval(function () {
-      incrementValue(ammoElement);
+      incrementValue("firing-section__ammo-counter");
     }, 50);
   }, 300);
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
@@ -247,6 +251,7 @@ let running = false;
 document.onkeyup = test;
 function test (e) {
   if (e.key === " " && !running) {
+    clearTimers(ammoTimeout, ammoInterval);
     running = true;
     const interval = setInterval(() => {
       const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
