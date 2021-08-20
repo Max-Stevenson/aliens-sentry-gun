@@ -226,18 +226,8 @@ function decreaseAmmoCounter (id) {
   }
 }
 
-function clearTimers (timeout, interval) {
-  clearTimeout(timeout);
-  clearInterval(interval);
-}
-
-let ammoTimeout, ammoInterval;
 const handleFiring = () => {
-  ammoTimeout = setTimeout(function () {
-    ammoInterval = setInterval(function () {
-      decreaseAmmoCounter("firing-section__ammo-counter");
-    }, 18);
-  }, 0);
+  decreaseAmmoCounter("firing-section__ammo-counter");
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
@@ -252,9 +242,6 @@ const handleFiring = () => {
 let running = false;
 document.onkeyup = test;
 function test (e) {
-  if (e.key === " ") {
-    clearTimers(ammoTimeout, ammoInterval);
-  }
   if (e.key === " " && !running) {
     running = true;
     const interval = setInterval(() => {
