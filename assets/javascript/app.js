@@ -219,15 +219,19 @@ const renderCopyright = () => {
 renderCopyright();
 
 function decreaseAmmoCounter (id) {
-  const el = document.getElementById(id);
-  let value = parseInt(el.textContent, 10);
-  if (value > 0) {
-    document.getElementById(id).textContent = --value;
+  const ammoCounter = document.querySelector(id);
+  const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
+  const tempValue = parseInt(temperatureStatusBar.style.height);
+  let ammoValue = parseInt(ammoCounter.textContent, 10);
+  console.log(`${tempValue}`);
+  if (ammoValue > 0 && tempValue < 100) {
+    console.log(tempValue);
+    ammoCounter.textContent = --ammoValue;
   }
 }
 
 const handleFiring = () => {
-  decreaseAmmoCounter("firing-section__ammo-counter");
+  decreaseAmmoCounter("#firing-section__ammo-counter");
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
@@ -235,7 +239,7 @@ const handleFiring = () => {
     (Number(temperatureStatusBar.offsetHeight) / Number(temperatureStatusBarParent.offsetHeight)) * 100
   );
   temperatureStatusBar.style.height = `${
-    previousHeightPercentage + 2 > 100 ? 100 : previousHeightPercentage + 2
+    previousHeightPercentage + 3 > 100 ? 100 : previousHeightPercentage + 3
   }%`;
 };
 
