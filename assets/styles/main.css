@@ -282,6 +282,10 @@ button[disabled] {
   background: #110D08;
 }
 
+#firing-section__time-counter {
+  color: #110D08;
+}
+
 #firingBottomSection {
   justify-content: space-evenly;
 }

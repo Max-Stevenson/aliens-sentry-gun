@@ -223,14 +223,19 @@ function decreaseAmmoCounter (id) {
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const tempValue = parseInt(temperatureStatusBar.style.height);
   let ammoValue = parseInt(ammoCounter.textContent, 10);
-  console.log(`${tempValue}`);
   if (ammoValue > 0 && tempValue < 100) {
-    console.log(tempValue);
     ammoCounter.textContent = --ammoValue;
   }
 }
 
+const initTimeAt = () => {
+  const timeAtElement = document.querySelector("#firing-section__time-counter");
+  timeAtElement.textContent = "33.00";
+  timeAtElement.style.color = "#838208";
+};
+
 const handleFiring = () => {
+  initTimeAt();
   decreaseAmmoCounter("#firing-section__ammo-counter");
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
