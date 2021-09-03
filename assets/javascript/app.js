@@ -218,8 +218,8 @@ const renderCopyright = () => {
 
 renderCopyright();
 
-function decreaseAmmoCounter (id) {
-  const ammoCounter = document.querySelector(id);
+function decreaseAmmoCounter () {
+  const ammoCounter = document.querySelector("#firing-section__ammo-counter");
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const tempValue = parseInt(temperatureStatusBar.style.height);
   let ammoValue = parseInt(ammoCounter.textContent, 10);
@@ -234,9 +234,28 @@ const initTimeAt = () => {
   timeAtElement.style.color = "#838208";
 };
 
+const setTimeAtToZero = () => {
+  const timeAtElement = document.querySelector("#firing-section__time-counter");
+  timeAtElement.textContent = "00.00";
+};
+
+const decreaseTimeAtToZero = () => {
+  const timeAtElement = document.querySelector("#firing-section__time-counter");
+  const ammoCounter = document.querySelector("#firing-section__ammo-counter");
+  const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
+  const tempValue = parseInt(temperatureStatusBar.style.height);
+  const ammoValue = parseInt(ammoCounter.textContent, 10);
+  let timeValue = parseFloat(timeAtElement.textContent);
+  if (ammoValue > 0 && tempValue < 100 && timeValue > 0) {
+    console.log(timeValue);
+    timeValue.textContent = timeValue--;
+  }
+};
+
 const handleFiring = () => {
   initTimeAt();
-  decreaseAmmoCounter("#firing-section__ammo-counter");
+  decreaseAmmoCounter();
+  decreaseTimeAtToZero();
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
@@ -265,6 +284,7 @@ function test (e) {
           previousHeightPercentage - 2 < 0 ? 0 : previousHeightPercentage - 2
         }%`;
       } else {
+        setTimeAtToZero();
         running = false;
         clearInterval(interval);
       }
