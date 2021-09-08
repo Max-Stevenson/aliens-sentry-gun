@@ -191,16 +191,27 @@ handleNavigation();
 setupConfirmButtonHandler();
 
 const activateCriticalWarning = () => {
-  console.log("running");
   const criticalWarningOuter = document.querySelector("#criticalWarning");
   const criticalWarningInner = criticalWarningOuter.firstElementChild;
 
-  criticalWarningOuter.classList.toggle("critical-warning__container--non-inverted");
-  criticalWarningInner.classList.toggle("critical-warning__content--non-inverted");
-  criticalWarningInner.classList.toggle("critical-warning-inverted");
-};
+  const ammoCount = parseInt(document.querySelector("#firing-section__ammo-counter").textContent);
+  // while (ammoCount < 450 && ammoCount > 0) {
+  //   console.log("running");
+  //   setTimeout(() => {
 
-activateCriticalWarning();
+  //   }, 1000);
+  //   ammoCount = parseInt(document.querySelector("#firing-section__ammo-counter").textContent);
+  // }
+
+  if (ammoCount < 450) {
+    setInterval(() => {
+      console.log("running");
+      criticalWarningOuter.classList.toggle("critical-warning__container--non-inverted");
+      criticalWarningInner.classList.toggle("critical-warning__content--non-inverted");
+      criticalWarningInner.classList.toggle("critical-warning-inverted");
+    }, 1000);
+  }
+};
 
 const renderCopyright = () => {
   document.querySelector(
@@ -248,6 +259,7 @@ const handleFiring = () => {
   initTimeAt();
   decreaseAmmoCounter();
   decreaseTimeAtToZero();
+  activateCriticalWarning();
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const temperatureStatusBarParent = temperatureStatusBar.parentElement;
 
