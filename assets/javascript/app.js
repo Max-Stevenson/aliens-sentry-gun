@@ -1,14 +1,3 @@
-const isSelectionScreen = true;
-const isFiringScreen = false;
-
-if (isSelectionScreen) {
-  // render selection console
-}
-
-if (isFiringScreen) {
-  // render firing console
-}
-
 const switchDisplays = () => {
   const settingsConsole = document.querySelector("#settingsConsole");
   const firingConsole = document.querySelector("#firingConsole");
@@ -201,14 +190,17 @@ const handleNavigation = function () {
 handleNavigation();
 setupConfirmButtonHandler();
 
-document.querySelector("#criticalWarning").addEventListener("click", function () {
-  const warningOuter = this;
-  const warningInner = warningOuter.firstElementChild;
+const activateCriticalWarning = () => {
+  console.log("running");
+  const criticalWarningOuter = document.querySelector("#criticalWarning");
+  const criticalWarningInner = criticalWarningOuter.firstElementChild;
 
-  warningOuter.classList.toggle("critical-warning__container--non-inverted");
-  warningInner.classList.toggle("critical-warning__content--non-inverted");
-  warningInner.classList.toggle("critical-warning-inverted");
-});
+  criticalWarningOuter.classList.toggle("critical-warning__container--non-inverted");
+  criticalWarningInner.classList.toggle("critical-warning__content--non-inverted");
+  criticalWarningInner.classList.toggle("critical-warning-inverted");
+};
+
+activateCriticalWarning();
 
 const renderCopyright = () => {
   document.querySelector(
