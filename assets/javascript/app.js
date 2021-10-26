@@ -1,3 +1,5 @@
+import Decimal from "./decimal.mjs";
+
 const switchDisplays = () => {
   const settingsConsole = document.querySelector("#settingsConsole");
   const firingConsole = document.querySelector("#firingConsole");
@@ -242,10 +244,11 @@ const decreaseTimeAtToZero = () => {
   const temperatureStatusBar = document.querySelector("#temperature-gauge .status-bar__inner-bar");
   const tempValue = parseInt(temperatureStatusBar.style.height);
   const ammoValue = parseInt(ammoCounter.textContent, 10);
-  let timeValue = parseFloat(timeAtElement.textContent);
+  let timeValue = new Decimal(timeAtElement.textContent);
   if (ammoValue > 0 && tempValue < 100 && timeValue > 0) {
     console.log(timeValue);
-    timeValue.textContent = timeValue--;
+    timeValue = timeValue.sub(1.00);
+    timeAtElement.textContent = timeValue;
   }
 };
 
