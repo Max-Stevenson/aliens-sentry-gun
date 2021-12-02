@@ -201,7 +201,6 @@ const activateCriticalWarning = () => {
   if (ammoCount < 470 && ammoCount > 0) {
     criticalWarningOuter.classList.add("critical-warning--active");
     setInterval(() => {
-      console.log("running");
       criticalWarningOuter.classList.toggle("critical-warning__container--non-inverted");
       criticalWarningInner.classList.toggle("critical-warning__content--non-inverted");
       criticalWarningInner.classList.toggle("critical-warning-inverted");
@@ -229,7 +228,6 @@ function decreaseAmmoCounter () {
 
 const initTimeAt = () => {
   const timeAtElement = document.querySelector("#firing-section__time-counter");
-  timeAtElement.textContent = "33.00";
   timeAtElement.style.color = "#838208";
 };
 
@@ -246,8 +244,7 @@ const decreaseTimeAtToZero = () => {
   const ammoValue = parseInt(ammoCounter.textContent, 10);
   let timeValue = new Decimal(timeAtElement.textContent);
   if (ammoValue > 0 && tempValue < 100 && timeValue > 0) {
-    console.log(timeValue);
-    timeValue = timeValue.sub(1.00);
+    timeValue = timeValue.sub(0.13).toFixed(2);
     timeAtElement.textContent = timeValue;
   }
 };
