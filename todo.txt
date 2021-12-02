@@ -1,1 +1,2 @@
-Fix time at zero function now that decimal library is installed.
+Implement random range meter movement for Aliens.
+Add firing sound.

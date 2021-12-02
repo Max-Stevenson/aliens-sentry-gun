@@ -17,7 +17,12 @@ const setupConfirmButtonHandler = () => {
 };
 
 const playNavigationSound = () => {
-  const audio = new Audio("./assets/selection.mp3");
+  const audio = new Audio("./assets/sounds/selection.mp3");
+  audio.play();
+};
+
+const playFiringSound = () => {
+  const audio = new Audio("./assets/sounds/firing.mp3");
   audio.play();
 };
 
@@ -228,6 +233,9 @@ function decreaseAmmoCounter () {
 
 const initTimeAt = () => {
   const timeAtElement = document.querySelector("#firing-section__time-counter");
+  if (timeAtElement.textContent === "00.00") {
+    timeAtElement.textContent = "33.00";
+  }
   timeAtElement.style.color = "#838208";
 };
 
@@ -250,6 +258,7 @@ const decreaseTimeAtToZero = () => {
 };
 
 const handleFiring = () => {
+  playFiringSound();
   initTimeAt();
   decreaseAmmoCounter();
   decreaseTimeAtToZero();
